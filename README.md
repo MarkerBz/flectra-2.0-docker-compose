@@ -77,9 +77,9 @@ The **addons/** folder contains custom addons. Just put your custom addons if yo
 
 ## Flectra configuration & log
 
-* To change Odoo configuration, edit file: **etc/odoo.conf**.
-* Log file: **etc/odoo-server.log**
-* Default database password (**admin_passwd**) is `minhng.info`, please change it @ [etc/odoo.conf#L60](/etc/odoo.conf#L60)
+* To change Odoo configuration, edit file: **etc/flectra.conf**.
+* Log file: **etc/flectra-server.log**
+* Default database password (**admin_passwd**) is ``master.password`, please change it @ [etc/flectra.conf#L60](/etc/flectra.conf#L60)
 
 ## Flectra container management
 
@@ -103,7 +103,7 @@ docker-compose down
 
 ## Live chat
 
-In [docker-compose.yml#L21](docker-compose.yml#L21), we exposed port **20017** for live-chat on host.
+In [docker-compose.yml#L21](docker-compose.yml#L21), we exposed port **20020** for live-chat on host.
 
 Configuring **nginx** to activate live chat feature (in production):
 
@@ -112,7 +112,7 @@ Configuring **nginx** to activate live chat feature (in production):
 server {
     #...
     location /longpolling/ {
-        proxy_pass http://127.0.0.1:20017/longpolling/;
+        proxy_pass http://127.0.0.1:20020/longpolling/;
     }
     #...
 }
