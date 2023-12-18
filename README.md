@@ -1,4 +1,4 @@
-# Installing Odoo 17.0 with one command (Supports multiple Odoo instances on one server).
+# Installing FlectraHQ 2.0 with one command (Supports multiple FlectraHQ instances on one server).
 
 ## Quick Installation
 
@@ -32,7 +32,7 @@ Start the container:
 ``` sh
 docker-compose up
 ```
-Then open `localhost:10017` to access Odoo 17.
+Then open `localhost:10017` to access Flectra 2.0.
 
 - **If you get any permission issues**, change the folder permission to make sure that the container is able to access the directory:
 
@@ -49,7 +49,7 @@ ports:
  - "10017:8069"
 ```
 
-- To run Odoo container in detached mode (be able to close terminal without stopping Odoo):
+- To run Odoo container in detached mode (be able to close terminal without stopping Flectra):
 
 ```
 docker-compose up -d
@@ -75,27 +75,27 @@ $ sudo sysctl -p    # apply new config immediately
 
 The **addons/** folder contains custom addons. Just put your custom addons if you have any.
 
-## Odoo configuration & log
+## Flectra configuration & log
 
 * To change Odoo configuration, edit file: **etc/odoo.conf**.
 * Log file: **etc/odoo-server.log**
 * Default database password (**admin_passwd**) is `minhng.info`, please change it @ [etc/odoo.conf#L60](/etc/odoo.conf#L60)
 
-## Odoo container management
+## Flectra container management
 
-**Run Odoo**:
+**Run Flectra**:
 
 ``` bash
 docker-compose up -d
 ```
 
-**Restart Odoo**:
+**Restart Flectra**:
 
 ``` bash
 docker-compose restart
 ```
 
-**Stop Odoo**:
+**Stop Flectra**:
 
 ``` bash
 docker-compose down
@@ -112,7 +112,7 @@ Configuring **nginx** to activate live chat feature (in production):
 server {
     #...
     location /longpolling/ {
-        proxy_pass http://0.0.0.0:20017/longpolling/;
+        proxy_pass http://127.0.0.1:20017/longpolling/;
     }
     #...
 }
@@ -121,15 +121,6 @@ server {
 
 ## docker-compose.yml
 
-* odoo:17
-* postgres:16
+* flectrahq/flectra:2.0
+* postgres:14
 
-## Odoo 17.0 screenshots after successful installation.
-
-<img src="screenshots/odoo-17-welcome-screenshot.png" width="50%">
-
-<img src="screenshots/odoo-17-apps-screenshot.png" width="100%">
-
-<img src="screenshots/odoo-17-sales-screen.png" width="100%">
-
-<img src="screenshots/odoo-17-product-form.png" width="100%">
