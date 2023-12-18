@@ -14,8 +14,8 @@ curl -s https://raw.githubusercontent.com/minhng92/odoo-17-docker-compose/master
 ```
 
 Some arguments:
-* First argument (**odoo-one**): Odoo deploy folder
-* Second argument (**10017**): Odoo port
+* First argument (**flectra-one**): Flectra deploy folder
+* Second argument (**10017**): Flectra port
 * Third argument (**20017**): live chat port
 
 If `curl` is not found, install it:
